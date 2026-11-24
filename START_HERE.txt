@@ -1,0 +1,19 @@
+NUMEROLOGY INTELLIGENCE SYSTEM — START HERE
+
+1. Install Python 3.10 or newer.
+2. Open this folder in Command Prompt / Terminal.
+3. Create and activate a virtual environment:
+   Windows: py -m venv venv
+             venv\Scripts\activate
+   macOS/Linux: python3 -m venv venv
+                source venv/bin/activate
+4. Install dependencies: python -m pip install -r requirements.txt
+5. Run: python app.py
+6. Open: http://127.0.0.1:5000
+7. Run tests: python -m unittest discover -s tests -v
+
+Read README.md first. Full report, group division, test plan, viva questions,
+demo script, API examples and PowerPoint are in docs/.
+
+Note: Chart.js is loaded from a CDN; internet is needed for the chart library.
+The application backend and database run locally.
