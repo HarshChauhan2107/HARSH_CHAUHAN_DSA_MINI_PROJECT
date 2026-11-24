@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Numerology Intelligence System | DSA Mini Project</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <div class="brand-mark">N<span>+</span></div>
+      <div class="brand-copy"><strong>NUMEROLOGY</strong><small>INTELLIGENCE SYSTEM</small></div>
+      <div class="side-label">WORKSPACE</div>
+      <a class="nav-item active" href="#overview">▦ <span>Overview</span></a>
+      <a class="nav-item" href="#analyzer">⌕ <span>Name analyzer</span></a>
+      <a class="nav-item" href="#records">☷ <span>Linked-list records</span></a>
+      <a class="nav-item" href="#analytics">▥ <span>Pattern analytics</span></a>
+      <div class="sidebar-note"><b>DSA CORE</b><p>Singly linked list<br>Insertion · Deletion<br>Search · Traversal</p></div>
+      <div class="side-footer">ACADEMIC MINI PROJECT<br>DSA · L4 ANALYSE</div>
+    </aside>
+
+    <main class="main">
+      <header class="topbar">
+        <div><div class="eyebrow">DATA STRUCTURES & ALGORITHMS / MINI PROJECT</div><h1>Numerology Intelligence</h1></div>
+        <div class="status"><i></i> SYSTEM ONLINE</div>
+      </header>
+
+      <section id="overview" class="hero">
+        <div><div class="eyebrow light">LINKED LIST ANALYSIS ENGINE</div>
+          <h2>Turn name data into<br><em>structured insights.</em></h2>
+          <p>Compute traditional name numbers, manage records through linked-list operations, and explore frequency patterns.</p>
+          <a class="hero-button" href="#analyzer">Start analysing <span>→</span></a>
+        </div>
+        <div class="hero-orbit"><div class="orbit orbit-one"></div><div class="orbit orbit-two"></div><div class="orbit-core">9</div><b class="float f1">1</b><b class="float f2">7</b><b class="float f3">3</b><b class="float f4">5</b></div>
+      </section>
+
+      <section class="stats-grid">
+        <article class="stat-card"><span>TOTAL RECORDS</span><strong id="statTotal">0</strong><small>Stored in linked list</small></article>
+        <article class="stat-card"><span>UNIQUE NUMBERS</span><strong id="statUnique">0</strong><small>Distinct result values</small></article>
+        <article class="stat-card"><span>MOST FREQUENT</span><strong id="statFrequent">—</strong><small id="statFrequentSub">Awaiting records</small></article>
+        <article class="stat-card"><span>STRUCTURE</span><strong class="structure">SLL</strong><small>Custom node-based list</small></article>
+      </section>
+
+      <section id="analyzer" class="content-grid">
+        <article class="panel analyzer-panel">
+          <div class="panel-heading"><div><div class="eyebrow">01 / CALCULATION</div><h3>Name analyzer</h3></div><span class="pill">PYTHAGOREAN</span></div>
+          <p class="muted">Enter a name to calculate its traditional letter-value total and reduced number.</p>
+          <form id="nameForm">
+            <label for="nameInput">FULL NAME</label>
+            <div class="input-row"><input id="nameInput" maxlength="100" placeholder="e.g. Ada Lovelace" required><button type="submit">Analyse <span>→</span></button></div>
+          </form>
+          <div id="resultBox" class="result-box empty"><span class="result-symbol">✳</span><div><b>Your result appears here</b><small>Enter a name to begin the analysis.</small></div></div>
+          <div class="method-note"><b>Calculation method</b><span>A=1 · B=2 · C=3 … I=9, then the cycle repeats.</span></div>
+        </article>
+        <article class="panel method-panel">
+          <div class="panel-heading"><div><div class="eyebrow">02 / ALGORITHM</div><h3>Number mapping</h3></div></div>
+          <div class="mapping-grid">
+            <div><b>1</b><span>A · J · S</span></div><div><b>2</b><span>B · K · T</span></div><div><b>3</b><span>C · L · U</span></div>
+            <div><b>4</b><span>D · M · V</span></div><div><b>5</b><span>E · N · W</span></div><div><b>6</b><span>F · O · X</span></div>
+            <div><b>7</b><span>G · P · Y</span></div><div><b>8</b><span>H · Q · Z</span></div><div><b>9</b><span>I · R</span></div>
+          </div>
+          <p class="mapping-foot">Master numbers 11, 22 and 33 are preserved during reduction.</p>
+        </article>
+      </section>
+
+      <section id="records" class="panel records-panel">
+        <div class="panel-heading"><div><div class="eyebrow">03 / DATA STRUCTURE OPERATIONS</div><h3>Linked-list records</h3><p class="muted">Each row represents a node in the in-memory singly linked list.</p></div><a class="export-button" href="/api/export">↓ Export CSV</a></div>
+        <div class="list-toolbar"><div class="search-wrap">⌕ <input id="searchInput" placeholder="Search names or number..."></div><span id="recordCount" class="muted">0 records</span></div>
+        <div class="table-wrap"><table><thead><tr><th>NODE / ID</th><th>NAME</th><th>RAW TOTAL</th><th>FINAL NUMBER</th><th>CREATED</th><th>OPERATIONS</th></tr></thead><tbody id="recordsBody"><tr><td colspan="6" class="empty-table">No records yet. Analyse a name to create the first node.</td></tr></tbody></table></div>
+        <div class="list-footer"><span><i class="legend-dot"></i> HEAD → NODE → NEXT → NULL</span><span id="listStatus">HEAD = NULL</span></div>
+      </section>
+
+      <section id="analytics" class="analytics-grid">
+        <article class="panel chart-panel"><div class="panel-heading"><div><div class="eyebrow">04 / FREQUENCY ANALYSIS</div><h3>Number distribution</h3></div></div><canvas id="frequencyChart" height="220"></canvas></article>
+        <article class="panel insight-panel"><div class="eyebrow">05 / PATTERN DETECTION</div><h3>Dataset insights</h3><div id="insights" class="insights"><p class="muted">Add records to reveal frequency patterns.</p></div><div class="complexity-note"><b>DSA complexity snapshot</b><span>Traversal: O(n) · Search: O(n)</span><span>Delete: O(n) · Insert at tail: O(n)</span></div></article>
+      </section>
+      <footer>NUMEROLOGY INTELLIGENCE SYSTEM <span>Built for DSA · Linked List Operations · L4 Analyse</span></footer>
+    </main>
+  </div>
+  <div id="toast" class="toast" role="status"></div>
+  <script src="{{ url_for('static', filename='app.js') }}"></script>
+</body>
+</html>
